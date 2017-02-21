@@ -1,0 +1,193 @@
+object Form1: TForm1
+  Left = 347
+  Height = 181
+  Top = 113
+  Width = 676
+  Caption = 'Meetings by Lenivets'
+  ClientHeight = 181
+  ClientWidth = 676
+  OnCreate = FormCreate
+  OnDblClick = FormDblClick
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  LCLVersion = '1.2.6.0'
+  object GroupBox1: TGroupBox
+    Left = 184
+    Height = 47
+    Top = 5
+    Width = 83
+    Caption = 'Date From:'
+    ClientHeight = 29
+    ClientWidth = 79
+    TabOrder = 0
+    object Edit2: TEdit
+      Left = 6
+      Height = 23
+      Top = -1
+      Width = 70
+      OnDblClick = Edit2DblClick
+      TabOrder = 0
+      Text = 'Edit2'
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 272
+    Height = 47
+    Top = 5
+    Width = 88
+    Caption = 'Date To:'
+    ClientHeight = 29
+    ClientWidth = 84
+    TabOrder = 1
+    object Edit3: TEdit
+      Left = 6
+      Height = 23
+      Top = -1
+      Width = 70
+      OnDblClick = Edit3DblClick
+      TabOrder = 0
+      Text = 'Edit3'
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 360
+    Height = 47
+    Top = 5
+    Width = 224
+    Caption = 'Client:'
+    ClientHeight = 29
+    ClientWidth = 220
+    TabOrder = 2
+    object Edit1: TEdit
+      Left = 110
+      Height = 23
+      Hint = 'Пример Коммандрировки:'#13#10#13#10'Донецк (AMSTOR,VARUS)'#13#10#13#10'Это 2 встречи.'
+      Top = -1
+      Width = 112
+      OnClick = Edit1Click
+      OnKeyPress = Edit1KeyPress
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = 'Edit1'
+      Visible = False
+    end
+    object ComboBox1: TComboBox
+      Left = 6
+      Height = 23
+      Top = -1
+      Width = 100
+      ItemHeight = 15
+      Items.Strings = (
+        'REST DAY'
+        'Vacation'
+        'Коммандировка'
+        'Встреча'
+        'Work at home'
+        'Sick'
+        'OFFICE'
+      )
+      OnSelect = ComboBox1Select
+      Style = csDropDownList
+      TabOrder = 1
+    end
+  end
+  object Button1: TButton
+    Left = 585
+    Height = 47
+    Top = 5
+    Width = 88
+    Caption = 'Insert'
+    Enabled = False
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object GroupBox4: TGroupBox
+    Left = 0
+    Height = 47
+    Top = 5
+    Width = 185
+    Caption = 'User:'
+    ClientHeight = 29
+    ClientWidth = 181
+    TabOrder = 4
+    object ComboBox3: TComboBox
+      Left = 6
+      Height = 23
+      Top = -1
+      Width = 168
+      DropDownCount = 10
+      Enabled = False
+      ItemHeight = 15
+      OnChange = ComboBox3Change
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object Button2: TButton
+    Left = 585
+    Height = 25
+    Top = 151
+    Width = 88
+    Caption = 'КтоГде?'
+    Enabled = False
+    OnClick = Button2Click
+    TabOrder = 5
+  end
+  object Button3: TButton
+    Left = 585
+    Height = 25
+    Top = 104
+    Width = 88
+    Caption = 'Travel'
+    OnClick = Button3Click
+    TabOrder = 6
+  end
+  object Button4: TButton
+    Left = 585
+    Height = 25
+    Top = 64
+    Width = 88
+    Caption = 'Инфо'
+    OnClick = Button4Click
+    TabOrder = 7
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 120
+    Top = 56
+    Width = 576
+    AutoEdit = False
+    AutoFillColumns = True
+    Color = clNone
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goAutoAddRows, goSmoothScroll, goAutoAddRowsSkipContentCheck]
+    RowCount = 2
+    TabOrder = 8
+    OnDblClick = StringGrid1DblClick
+    OnDrawCell = StringGrid1DrawCell
+    ColWidths = (
+      114
+      114
+      114
+      114
+      116
+    )
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    LogEvents = []
+    Options = []
+    left = 367
+    top = 49
+  end
+  object CalendarDialog1: TCalendarDialog
+    Date = 41753
+    OKCaption = '&ОК'
+    CancelCaption = 'Отмена'
+    left = 302
+    top = 47
+  end
+end
